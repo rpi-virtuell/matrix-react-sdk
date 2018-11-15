@@ -79,16 +79,25 @@ export const SETTINGS = {
     // },
     "feature_pinning": {
         isFeature: true,
-        displayName: _td("Message Pinning"),
+        displayName: _td('Message Pinning'),
         supportedLevels: LEVELS_FEATURE,
         default: false,
     },
     "feature_lazyloading": {
         isFeature: true,
-        displayName: _td("Increase performance by only loading room members on first view"),
+        displayName: _td('Increase performance by only loading room members on first view'),
         supportedLevels: LEVELS_FEATURE,
         controller: new LazyLoadingController(),
         default: true,
+    },
+    "pushToTalk": {
+        displayName: _td('Push-to-Talk'),
+        supportedLevels: LEVELS_DEVICE_ONLY_SETTINGS_WITH_CONFIG,
+        default: {
+            enabled: false,
+            keybinding: [],
+            ascii: 'Not set',
+        },
     },
     "MessageComposerInput.dontSuggestEmoji": {
         supportedLevels: LEVELS_ACCOUNT_SETTINGS,
@@ -241,21 +250,21 @@ export const SETTINGS = {
         supportedLevels: LEVELS_ROOM_SETTINGS_WITH_ROOM,
         displayName: {
             "default": _td('Enable inline URL previews by default'),
-            "room-account": _td("Enable URL previews for this room (only affects you)"),
-            "room": _td("Enable URL previews by default for participants in this room"),
+            "room-account": _td('Enable URL previews for this room (only affects you)'),
+            "room": _td('Enable URL previews by default for participants in this room'),
         },
         default: true,
     },
     "urlPreviewsEnabled_e2ee": {
         supportedLevels: ['room-device', 'room-account'],
         displayName: {
-            "room-account": _td("Enable URL previews for this room (only affects you)"),
+            "room-account": _td('Enable URL previews for this room (only affects you)'),
         },
         default: false,
     },
     "roomColor": {
         supportedLevels: LEVELS_ROOM_SETTINGS_WITH_ROOM,
-        displayName: _td("Room Colour"),
+        displayName: _td('Room Colour'),
         default: {
             primary_color: null, // Hex string, eg: #000000
             secondary_color: null, // Hex string, eg: #000000
